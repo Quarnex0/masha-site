@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Для Маши ♥ 3 месяца вместе</title>
+  <meta name="description" content="Маленький сайт-открытка для Маши: наши 3 месяца вместе." />
+  <meta name="theme-color" content="#ff6f9c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Маша ♥" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hearts-layer" id="hearts" aria-hidden="true"></div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить ночной режим" title="Авто: после 21:00. Нажми, чтобы переключить вручную">🌙</button>
+
+  <main class="page">
+    <header class="hero">
+      <div class="badge">💌 для Маши</div>
+      <h1>Мы вместе уже <span class="accent" id="heroDays">…</span> дней</h1>
+      <p class="lead">С 29 июля 2026-го. И, пожалуйста, ещё очень-очень долго.</p>
+
+      <div class="stats" aria-label="Наши числа">
+        <div class="stat"><span id="statDays">…</span><small id="statDaysLabel">дней вместе</small></div>
+        <div class="stat"><span id="statMonths">…</span><small id="statMonthsLabel">месяцев вместе</small></div>
+        <div class="stat"><span>∞</span><small>планов на будущее</small></div>
+      </div>
+    </header>
+
+    <section class="card terminal" aria-labelledby="terminalTitle">
+      <div class="terminal-bar">
+        <span class="dot dot-pink"></span><span class="dot dot-yellow"></span><span class="dot dot-mint"></span>
+        <h2 id="terminalTitle">маша@сердце:~</h2>
+      </div>
+
+      <div class="terminal-output" id="terminalOutput" role="log" aria-live="polite"></div>
+
+      <form class="input-row" id="terminalForm" autocomplete="off">
+        <label class="prompt" for="terminalInput">маша@сердце:~$</label>
+        <input id="terminalInput" name="command" type="text" placeholder="набери help и нажми Enter" spellcheck="false" aria-label="Команда" />
+        <button type="submit" aria-label="Выполнить команду">↵</button>
+      </form>
+
+      <div class="chips" id="chips" aria-label="Быстрые команды">
+        <button type="button" data-command="help">help</button>
+        <button type="button" data-command="cat why.txt">cat why.txt</button>
+        <button type="button" data-command="./hug.sh">./hug.sh</button>
+        <button type="button" data-command="git log">git log</button>
+        <button type="button" data-command="surprise">surprise 💗</button>
+      </div>
+    </section>
+
+    <div class="duo">
+      <section class="card mini-card countdown-card" aria-labelledby="countdownTitle">
+        <h2 id="countdownTitle">Следующая веха</h2>
+        <p class="big-number"><span id="countdownDays">…</span> <small id="countdownLabel">дней</small></p>
+        <p class="tiny" id="countdownText">до следующей даты вместе</p>
+        <div class="progress" aria-hidden="true">
+          <div class="progress-fill" id="countdownProgress"></div>
+          <span class="progress-heart">♥</span>
+        </div>
+      </section>
+
+      <section class="card mini-card hugs-card" aria-labelledby="hugsTitle">
+        <h2 id="hugsTitle">Счётчик обнимашек</h2>
+        <p class="big-number heart-number" id="hugCount">0</p>
+        <p class="tiny" id="hugPhrase">Нажми, чтобы обнять Машу</p>
+        <button class="hug-button" id="hugButton" type="button">🤗 Обнять ещё раз</button>
+      </section>
+    </div>
+
+    <section class="card photos-section" id="photos" aria-labelledby="photosTitle">
+      <div class="section-heading">
+        <h2 id="photosTitle">Наши моменты 📸</h2>
+        <p class="tiny">нажми на фотографию — откроется побольше</p>
+      </div>
+
+      <div class="polaroids">
+        <!-- Подписи можно поменять на свои -->
+        <figure class="polaroid" data-caption="04 сентября — просто один из наших вечеров">
+          <button class="photo-button" type="button" aria-label="Открыть фотографию от 4 сентября">
+            <img src="photos/photo-2026-09-04-1.jpg" alt="Наше фото от 4 сентября" loading="lazy" />
+            <span class="photo-zoom">🔍</span>
+          </button>
+          <figcaption>04.09 · один из наших вечеров</figcaption>
+        </figure>
+
+        <figure class="polaroid" data-caption="04 сентября — и снова ты рядом">
+          <button class="photo-button" type="button" aria-label="Открыть вторую фотографию от 4 сентября">
+            <img src="photos/photo-2026-09-04-2.jpg" alt="Наше второе фото от 4 сентября" loading="lazy" />
+            <span class="photo-zoom">🔍</span>
+          </button>
+          <figcaption>04.09 · и снова ты рядом</figcaption>
+        </figure>
+
+        <figure class="polaroid" data-caption="20 сентября — хочу запомнить навсегда">
+          <button class="photo-button" type="button" aria-label="Открыть фотографию от 20 сентября">
+            <img src="photos/photo-2026-09-20.jpg" alt="Наше фото от 20 сентября" loading="lazy" />
+            <span class="photo-zoom">🔍</span>
+          </button>
+          <figcaption>20.09 · хочу запомнить навсегда</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Закрыть">×</button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Предыдущее фото">‹</button>
+      <figure class="lightbox-figure">
+        <img id="lightboxImage" src="" alt="" />
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Следующее фото">›</button>
+    </div>
+
+    <section class="card map-section" id="places" aria-labelledby="placesTitle">
+      <div class="section-heading">
+        <h2 id="placesTitle">Где всё началось 🗺️</h2>
+        <p class="tiny">две точки, между которыми началась наша история</p>
+      </div>
+
+      <svg class="map-svg" viewBox="0 0 600 300" role="img" aria-labelledby="mapSvgTitle mapSvgDesc">
+        <title id="mapSvgTitle">Карта наших мест</title>
+        <desc id="mapSvgDesc">Место первой встречи и место первых фотографий</desc>
+        <defs>
+          <pattern id="mapGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="currentColor" stroke-opacity="0.09" stroke-width="1" />
+          </pattern>
+        </defs>
+
+        <rect width="600" height="300" rx="20" fill="url(#mapGrid)" />
+        <path d="M0 214 C120 170 186 246 306 190 S486 120 600 152" fill="none" stroke="#ffd9e8" stroke-width="16" stroke-linecap="round" opacity="0.75" />
+        <path d="M92 0 C126 92 70 168 132 300" fill="none" stroke="#e7deff" stroke-width="10" stroke-linecap="round" opacity="0.8" />
+        <path d="M432 0 C402 82 474 166 430 300" fill="none" stroke="#e7deff" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+
+        <path class="route-line" d="M121 71 Q300 92 479 229" fill="none" stroke="#ff6f9c" stroke-width="3" stroke-dasharray="8 9" stroke-linecap="round" />
+
+        <g transform="translate(121 71)">
+          <g class="map-pin">
+            <path d="M0 0 C-14 -18 -18 -28 -18 -38 A18 18 0 1 1 18 -38 C18 -28 14 -18 0 0Z" fill="#ff6f9c" />
+            <circle cx="0" cy="-38" r="6" fill="#fff" />
+            <text class="map-label" x="28" y="-32">29.07 · первая встреча</text>
+            <text class="map-sub" x="28" y="-15">52.585694, 39.542544</text>
+          </g>
+        </g>
+
+        <g transform="translate(479 229)">
+          <g class="map-pin map-pin-second">
+            <path d="M0 0 C-14 -18 -18 -28 -18 -38 A18 18 0 1 1 18 -38 C18 -28 14 -18 0 0Z" fill="#7c5cff" />
+            <circle cx="0" cy="-38" r="6" fill="#fff" />
+            <text class="map-label" x="-28" y="-46" text-anchor="end">04.09 · первые фотографии</text>
+            <text class="map-sub" x="-28" y="-29" text-anchor="end">52.581844, 39.551893</text>
+          </g>
+        </g>
+
+        <g class="map-compass" transform="translate(556 44)">
+          <circle r="18" fill="rgba(255,255,255,0.7)" />
+          <path d="M0 -12 L4 2 L0 -1 L-4 2Z" fill="#ff6f9c" />
+          <text class="map-compass-letter" x="0" y="13" text-anchor="middle">С</text>
+        </g>
+      </svg>
+      <p class="tiny map-note">Координаты твои — я только нарисовал дорогу между ними ♥</p>
+    </section>
+
+    <section class="card" id="timeline" aria-labelledby="timelineTitle">
+      <h2 id="timelineTitle">Наш git log <span class="tiny">— пока только три месяца, а хочется всю жизнь</span></h2>
+      <!-- Замени эти строки на ваши реальные моменты, когда захочешь. -->
+      <ol class="timeline-list">
+        <li><code>29.07.2026</code><strong>feat: всё началось</strong><p>Первый день, с которого в моей жизни стало на одного человека лучше.</p></li>
+        <li><code>август</code><strong>feat: первое свидание</strong><p>Кажется, именно тогда я понял: хочу продолжать.</p></li>
+        <li><code>сентябрь</code><strong>fix: научился просто слушать</strong><p>Оказалось, это лучшее, что я могу делать рядом с тобой.</p></li>
+        <li><code>29.10.2026</code><strong>release: 3 месяца 🎉</strong><p>Маленькая веха. До большой — ещё целая жизнь вместе.</p></li>
+        <li class="placeholder"><code>TODO</code><strong>здесь будет наша история</strong><p>Допиши сюда то, что знаешь только ты ♥</p></li>
+      </ol>
+    </section>
+
+    <section class="card" id="reasons" aria-labelledby="reasonsTitle">
+      <h2 id="reasonsTitle">Почему я тебя люблю <span class="tiny">— ох, неполный список</span></h2>
+      <ul class="reason-grid">
+        <li>умеешь делать самый обычный день особенным</li>
+        <li>когда ты смеёшься, у меня тоже меняется настроение</li>
+        <li>терпишь мои шутки про код (почти всегда)</li>
+        <li>обнимаешь так, что не хочется никуда идти</li>
+        <li>даже скучные очереди с тобой кажутся короче</li>
+        <li>просто ты. И этого уже достаточно</li>
+      </ul>
+    </section>
+
+    <section class="card secret" aria-labelledby="secretTitle">
+      <h2 id="secretTitle">Один клик — и станет ещё милее</h2>
+      <button class="heart-button" id="surpriseButton" type="button">Нажми сюда 💗</button>
+      <p class="secret-text" id="secretText" hidden>
+        Маша, три месяца — это только первый коммит.<br />
+        Я хочу быть с тобой в каждой следующей версии.<br />
+        Спасибо, что ты есть. ♥
+      </p>
+    </section>
+
+    <section class="card install" aria-labelledby="installTitle">
+      <h2 id="installTitle">Чтобы я был всегда под рукой 📲</h2>
+      <p>Открой ссылку в <strong>Safari</strong> → кнопка «Поделиться» → <strong>«На главный экран»</strong>. Появится сердечко — нажми на него, и сайт откроется почти как приложение.</p>
+      <p class="tiny">Настоящий виджет с живым счётчиком на iOS можно сделать только в нативном приложении, но иконка на главном экране работает почти так же ♥</p>
+    </section>
+
+    <footer>сделано с ♥ и парой строк кода · <span id="year"></span></footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
